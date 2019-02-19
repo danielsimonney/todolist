@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Daniel">
+
+    <title>karaoke</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Damion|Muli:400,600');
+body{
+  font-family: 'Muli', sans-serif;
+  background: url("https://www.toptal.com/designers/subtlepatterns/patterns/geometry2.png");
+  margin: 1.5em;
+}
+h2 {
+    font-family: 'Damion', cursive;
+    font-weight: 400;
+    color: #4caf50;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+}
+h2:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    left: 0;
+    top: 22px;
+    background: #4caf50;
+    height: 1px;
+}
+h2 i {
+    font-style: normal;
+    background: #fff;
+    position: relative;
+    padding: 10px;
+}
+:focus{outline: none;}
+
+/* necessary to give position: relative to parent. */
+input[type="text"]{font: 15px/24px 'Muli', sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+:focus{outline: none;}
+
+.col-3{float: left; width: 27.33%; margin: 40px 3%; position: relative;} /* necessary to give position: relative to parent. */
+input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
+
+.effect-1, 
+.effect-2, 
+.effect-3{border: 0; padding: 7px 0; border-bottom: 1px solid #ccc;}
+
+.effect-1 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+.effect-1:focus ~ .focus-border{width: 100%; transition: 0.4s;}
+
+.effect-2 ~ .focus-border{position: absolute; bottom: 0; left: 50%; width: 0; height: 2px; background-color: #4caf50; transition: 0.4s;}
+.effect-2:focus ~ .focus-border{width: 100%; transition: 0.4s; left: 0;}
+
+.effect-3 ~ .focus-border{position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; z-index: 99;}
+.effect-3 ~ .focus-border:before, 
+.effect-3 ~ .focus-border:after{content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 100%; background-color: #4caf50; transition: 0.4s;}
+.effect-3 ~ .focus-border:after{left: auto; right: 0;}
+.effect-3:focus ~ .focus-border:before, 
+.effect-3:focus ~ .focus-border:after{width: 50%; transition: 0.4s;}
+#ajax{
+    margin-left:35vw;
+    margin-top: 15vh;
+    background-color:blue;
+    font-size:17px;
+    height: 5vh;
+    border-radius:28px;
+    cursor: pointer;
+}
+#ajax:hover{
+    background-color:green;
+}
+.myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+table {
+  width: 50%;
+  margin: auto;
+  margin-top: 50px;
+  border-collapse: collapse;
+  background: white;
+  padding: 5px;
+  border-radius: 3px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #C1C3D1;
+  position: relative;
+}
+th, td {
+  padding: 1em;
+  background: #ddd;
+  border-bottom: 2px solid white; 
+}
+
+</style>
+<body>
+    <div class="mahi_holder">
+        <div class="container">
+          <div class="row bg_1">
+            <h2><i>My to do list</i></h2>
+            <div class="col-3">
+                <input class="effect-1" type="text" placeholder="date" id="dateinput">
+                  <span class="focus-border"></span>
+              </div>
+            <div class="col-3">
+                <input class="effect-2" type="text" placeholder="name" id="nameinput">
+                  <span class="focus-border"></span>
+              </div>
+            <div class="col-3">
+                <input class="effect-3" type="text" placeholder="thing to do" id="todoinput">
+                  <span class="focus-border"></span>
+              </div>
+              </div>
+              </div>
+              </div>
+              
+              <span class="myButton" id="monspan">green</span>
+  <table border="3px" id="table">
+<tr>
+    <th>date</th>
+    <th>name</th>
+    <th>task</th>
+</tr>
+</table>
+<div id="buttonContain"></div>
+<button id="ajax" >Cliquez pour voir le nombre de vélibs disponibles</button>
+<script type="text/javascript" src="new.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
+
+
+
